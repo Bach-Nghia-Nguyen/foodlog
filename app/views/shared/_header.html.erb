@@ -1,0 +1,43 @@
+<section class="hero is-link is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+
+            <%= link_to root_path, class: "navbar-item" do %>
+              <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>rice</title><path d="M23,11H1a1,1,0,0,0-1,1A12.029,12.029,0,0,0,7.021,22.909,1,1,0,0,0,7.437,23h9.126a1,1,0,0,0,.416-.091A12.029,12.029,0,0,0,24,12,1,1,0,0,0,23,11Z" fill="#fff"></path> <path d="M3.171,10H20.829a1,1,0,0,0,.943-1.333,3.983,3.983,0,0,0-1.418-1.895l3.478-5.217L22.168.445l-3.726,5.59A3.817,3.817,0,0,0,18,6a3.957,3.957,0,0,0-1.466.279l1.408-3.943-1.884-.672L14.721,5.409a3.95,3.95,0,0,0-2.89-.227,3.979,3.979,0,0,0-6.3.845,4.009,4.009,0,0,0-3.306,2.64A1,1,0,0,0,3.171,10Z"></path> <circle cx="4" cy="3" r="1" fill="#fff"></circle> <circle cx="12" cy="2" r="1" fill="#fff"></circle></svg>
+              <span class="has-text-weight-bold is-size-4 ml-4">Foodlog</span>
+            <% end %>
+
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <span class="navbar-item">
+              <%= link_to "Create new entry", new_entry_path, class: "button is-success" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <% if content_for(:title) %>
+          <%= yield :title %>
+        <% else %>
+          Foodlog
+        <% end %>
+      </h1>
+    </div>
+  </div>
+
+</section>
