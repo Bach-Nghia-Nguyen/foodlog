@@ -2,12 +2,12 @@
   Foodlog &ndash; <%= DateTime.now.to_s(:nice_date) %>
 <% end %>
   
-<div class="columns mt-6 is-centered">
+<div class="mt-6 columns is-multiline is-centered">
   <% @entries.each do |entry| %>
     <div class="column is-one-quarter">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title"><%= entry.meal_type %></p>
+          <p class="card-header-title"><%= entry.meal_type %> | <%= entry.category.title if entry.category.present? %></p>
         </header>
 
         <div class="card-content">
@@ -46,6 +46,6 @@
   <% end %>
 </div>
 
-<div class="columns is-centered mt-6">
+<div class="mt-6 columns is-centered">
   <%= link_to "View all entries", archives_index_path, class: "button is-link is-outlined is-centered" %>
 </div>
